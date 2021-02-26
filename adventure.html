@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowning in the sea of js</title>
+    <style>
+        img {
+            width: 200px;
+            height: auto;
+        }
+
+        div {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var currentScene = document.getElementById(''); //the ID of the first scene suppose to be declared here
+        currentScene.style.display = "block"
+        function showNext(divId) {
+            currentScene.style.display = "none";
+            var nextScene = document.getElementById(divId);
+            nextScene.style.display = "block";
+            currentScene = document.getElementById(divId);
+        }
+    </script>
+</body>
+
+</html>
