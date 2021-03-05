@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drowning in the sea of js</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drowning in the sea of js</title>
+        <style>
         img {
             width: 200px;
             height: auto;
         }
-
-        div {
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        div[id^='scene-'] {
+            border: 3px black solid;
+            margin: 10px;
             display: none;
         }
     </style>
-</head>
-
-<body>
-    <script>
-        var currentScene = document.getElementById(''); //the ID of the first scene suppose to be declared here
+    </head>
+    <div id="scene-1">
+        <button onclick="showNext('scene-2')"><img src="" alt=""></button>
+        <p>You're surfing on the internet today as usual.</p>
+        <p>(click the image to continue)</p>
+    </div>
+    <div id="scene-2">
+        <p>You found a mysterious website.</p>
+        <img src="" alt="">
+    </div>
+    <div id="scene-3">
+        <p>You are hesitant about whether to click the link</p>
+        <button>
+            <p>I gotta be careful...</p>
+        </button>
+        <button>
+            <p>Click it anyway!</p>
+        </button>
+    </div>
+    <div id="scene-4">
+        <p>You remembered that teacher had told you not to click malicious links at school.</p>
+    </div>
+    <div id="scene-5">
+        <img src="" alt="">
+        <p>Your curiosity has driven you to the wonderland.</p>
+    </div>
+     
+    <body>
+        <script>
+        //the ID of the first scene suppose to be declared below
+        var currentScene = document.getElementById('scene-1');
         currentScene.style.display = "block";
-        function showNext(divId) {
+        function showNext(sceneId) {
             currentScene.style.display = "none";
-            var nextScene = document.getElementById(divId);
+            var nextScene = document.getElementById(sceneId);
             nextScene.style.display = "block";
-            currentScene = document.getElementById(divId);
+            currentScene = document.getElementById(sceneId);
         }
     </script>
-</body>
+    </body>
 
 </html>
